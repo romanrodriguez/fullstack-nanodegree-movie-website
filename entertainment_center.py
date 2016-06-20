@@ -1,5 +1,5 @@
-import fresh_tomatoes
-import media
+import fresh_tomatoes  #Generates site
+import media  #Provides the class Movie to store movie related information
 
 gladiator = media.Movie(
     "Gladiator",
