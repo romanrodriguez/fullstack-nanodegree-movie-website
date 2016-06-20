@@ -36,10 +36,8 @@ main_page_head = '''
             height: 100%;
         }
         .movie-tile {
-            margin-top: 20px;
-            margin-bottom: 20px;
-            padding-top: 20px;
-            padding-bottom: 20px;
+            margin-bottom: 5px;
+            padding-top: 15px;
         }
         .movie-tile:hover {
             background-color: #EEE;
@@ -125,13 +123,16 @@ main_page_content = '''
 
 
 # A single movie entry html template
+# Added mouse over for storyline and an error message if an image doesn't load
 movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center"
 data-trailer-youtube-id="{trailer_youtube_id}"
-data-toggle="modal" data-target="#trailer">
-    <img src="{poster_image_url}" width="220" height="342">
+data-toggle="modal" data-target="#trailer" onMouseOver="{movie_storyline}">
+    <img src="{poster_image_url}" title="{movie_storyline}"
+    alt="Image Not Found"
+    onError="this.src='http://a.dilcdn.com/bl/wp-content/uploads/sites/8/2014/03/image5.jpg';"
+    width="220" height="342">
     <h2>{movie_title}</h2>
-    <p>{movie_storyline}</p>
 </div>
 '''
 
